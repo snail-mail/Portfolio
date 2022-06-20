@@ -1,0 +1,71 @@
+PImage img;
+
+void setup ()
+{
+  size (800,800);
+  img = loadImage("space.png");
+}
+
+void draw() { 
+  background(#646464);
+  image(img, 0, 0);
+  stroke(0);
+  strokeWeight(4);
+  fill(255,57,83);
+  rect(260, 400, 280, 110, 0, 0, 40, 40); //Body
+  rect(360, 510, 20, 130, 0, 0, 0, 0); //Left Leg
+  rect(420, 510, 20, 130, 0, 0, 0, 0); //Right Leg
+  rect(490, 510, 20, 50, 0, 0, 20, 20); //Right Hand
+  rect(290, 510, 20, 50, 0, 0, 20, 20); //Left Hand
+  stroke(0);
+  // rect(280, 270, 260, 130, 1050, 1050, 0, 0);
+  arc(400, 400, 260, 320, PI, TWO_PI);
+  fill(255,255,255);
+  ellipse (355,155,75,20); //left wing
+  ellipse (445,155,75,20); //right wing
+  rect(390,170,13,70,0,0,0,0);
+  fill(255,255,255);
+  ellipse(398, 160, 30, 30);
+  
+  fill(255,255,255);
+  ellipse(320, 290, 100, 100); //Left Eye
+  // fill(0,0,0);
+   if (mousePressed == true) {
+    fill(#FFF300);
+  } else {
+    fill(0);
+  }
+
+PVector mouseVector= new PVector(mouseX,mouseY);
+  PVector centerVector = new PVector(310,280);
+  
+  PVector diff = PVector.sub(mouseVector,centerVector);
+  PVector norm = diff.normalize();
+  PVector dist = norm.mult(32);
+  
+  ellipse(320+dist.x, 290+dist.y, 30, 30); //Left Center Eye
+  fill(255,255,255);
+  ellipse(490, 300, 80, 80); //Right Eye
+  //fill(0,0,0);
+  if (mousePressed == true) {
+    fill(#3BFFFD);
+  } else {
+    fill(0);
+  }
+  
+  
+  ellipse(490+dist.x, 300+dist.y, 18, 18); //Right Center Eye
+  fill(0,0,0);
+  rect(420, 630, 60, 30, 0, 20, 20, 0); // Right foot
+  fill(0,0,0);
+  rect(320, 630, 60, 30, 20, 0, 0, 20); //Left Foot
+  // rect(270, 550, 40, 15, 5, 0, 0, 5); //Left Palm
+  fill(255,255,255);
+  triangle(260, 400, 300, 400, 280, 360);
+  triangle(300, 400, 340, 400, 320, 360);
+  triangle(340, 400, 380, 400, 360, 360);
+  triangle(380, 400, 420, 400, 400, 360);
+  triangle(420, 400, 460, 400, 440, 360);
+  triangle(460, 400, 500, 400, 480, 360);
+  triangle(500, 400, 540, 400, 520, 360);
+}
