@@ -1,0 +1,443 @@
+String message1 = "";
+float angle = 0;
+float y = 0;
+float x = 0;
+PImage keypad;
+PImage numbers;
+
+int v = 10;
+
+void setup() {
+  fullScreen();
+  textSize(18);
+  keypad = loadImage("Keypad.png");
+  numbers = loadImage("numbers.png");
+}
+
+void draw() {
+  background(#618D98);
+  imageMode(CENTER);
+  if (v==10) {
+    image(keypad, width/2, height/2);
+  } else if ( v== 20) {
+    image(numbers, width/2, height/2);
+  }
+
+  fill(#edfbff);
+  translate (width*0.425, height*0.37);
+  text(message1, 0, 0, width/6.75, height/3.7);
+  translate (-width*0.425, -height*0.37);
+
+  // fill(#AFAFAF);
+  //textSize(18);
+  //textAlign(CENTER);
+  //text("A", sin(radians(180))*R2+900+ cx, cos(radians(180))*R2 +cy+500);
+
+  translate (width/2, height/2);
+  rotate(angle);
+  pushMatrix();
+
+  fill(#3A545A);
+  stroke(#ffffff);
+  strokeWeight(2);
+  popMatrix();
+  ellipse(0, -225, 32, 32);
+}
+
+void keyTyped() {
+  if (key == ' ') {
+    message1 += " ";
+  }
+  if (key == BACKSPACE) {
+    if (message1.length() > 0) {
+      message1 = message1.substring(0, message1.length() - 1);
+    }
+  }
+
+  if (v==10) {
+
+    if ((angle >= radians(-13.8461538462*0.5)) && (angle < radians (13.8461538462*0.5))) {
+      {
+        if (key == 'a') {
+          message1 += "A";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*0.5)) && (angle < radians (13.8461538462*1.5))) {
+      {
+        if (key == 'a') {
+          message1 += "B";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*1.5)) && (angle < radians (13.8461538462*2.5))) {
+      {
+        if (key == 'a') {
+          message1 += "C";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*2.5)) && (angle < radians (13.8461538462*3.5))) {
+      {
+        if (key == 'a') {
+          message1 += "D";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*3.5)) && (angle < radians (13.8461538462*4.5))) {
+      {
+        if (key == 'a') {
+          message1 += "E";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*4.5)) && (angle < radians (13.8461538462*5.5))) {
+      {
+        if (key == 'a') {
+          message1 += "F";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*5.5)) && (angle < radians (13.8461538462*6.5))) {
+      {
+        if (key == 'a') {
+          message1 += "G";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*6.5)) && (angle < radians (13.8461538462*7.5))) {
+      {
+        if (key == 'a') {
+          message1 += "H";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*7.5)) && (angle < radians (13.8461538462*8.5))) {
+      {
+        if (key == 'a') {
+          message1 += "I";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*8.5)) && (angle < radians (13.8461538462*9.5))) {
+      {
+        if (key == 'a') {
+          message1 += "J";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*9.5)) && (angle < radians (13.8461538462*10.5))) {
+      {
+        if (key == 'a') {
+          message1 += "K";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*10.5)) && (angle < radians (13.8461538462*11.5))) {
+      {
+        if (key == 'a') {
+          message1 += "L";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*11.5)) && (angle < radians (13.8461538462*12.5))) {
+      {
+        if (key == 'a') {
+          message1 += "M";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*12.5)) && (angle < radians (13.8461538462*13.5))) {
+      {
+        if (key == 'a') {
+          message1 += "N";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*13.5)) && (angle < radians (13.8461538462*14.5))) {
+      {
+        if (key == 'a') {
+          message1 += "O";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*14.5)) && (angle < radians (13.8461538462*15.5))) {
+      {
+        if (key == 'a') {
+          message1 += "P";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*15.5)) && (angle < radians (13.8461538462*16.5))) {
+      {
+        if (key == 'a') {
+          message1 += "Q";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*16.5)) && (angle < radians (13.8461538462*17.5))) {
+      {
+        if (key == 'a') {
+          message1 += "R";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*17.5)) && (angle < radians (13.8461538462*18.5))) {
+      {
+        if (key == 'a') {
+          message1 += "S";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*18.5)) && (angle < radians (13.8461538462*19.5))) {
+      {
+        if (key == 'a') {
+          message1 += "T";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*19.5)) && (angle < radians (13.8461538462*20.5))) {
+      {
+        if (key == 'a') {
+          message1 += "U";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*20.5)) && (angle < radians (13.8461538462*21.5))) {
+      {
+        if (key == 'a') {
+          message1 += "V";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*21.5)) && (angle < radians (13.8461538462*22.5))) {
+      {
+        if (key == 'a') {
+          message1 += "W";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*22.5)) && (angle < radians (13.8461538462*23.5))) {
+      {
+        if (key == 'a') {
+          message1 += "X";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*23.5)) && (angle < radians (13.8461538462*24.5))) {
+      {
+        if (key == 'a') {
+          message1 += "Y";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*24.5)) && (angle < radians (13.8461538462*25.5))) {
+      {
+        if (key == 'a') {
+          message1 += "Z";
+        }
+      }
+    }
+  }
+
+
+  if (v==20) {
+
+    if ((angle >= radians(-13.8461538462*0.5)) && (angle < radians (13.8461538462*0.5))) {
+      {
+        if (key == 'a') {
+          message1 += "0";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*0.5)) && (angle < radians (13.8461538462*1.5))) {
+      {
+        if (key == 'a') {
+          message1 += "1";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*1.5)) && (angle < radians (13.8461538462*2.5))) {
+      {
+        if (key == 'a') {
+          message1 += "2";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*2.5)) && (angle < radians (13.8461538462*3.5))) {
+      {
+        if (key == 'a') {
+          message1 += "3";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*3.5)) && (angle < radians (13.8461538462*4.5))) {
+      {
+        if (key == 'a') {
+          message1 += "4";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*4.5)) && (angle < radians (13.8461538462*5.5))) {
+      {
+        if (key == 'a') {
+          message1 += "5";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*5.5)) && (angle < radians (13.8461538462*6.5))) {
+      {
+        if (key == 'a') {
+          message1 += "6";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*6.5)) && (angle < radians (13.8461538462*7.5))) {
+      {
+        if (key == 'a') {
+          message1 += "7";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*7.5)) && (angle < radians (13.8461538462*8.5))) {
+      {
+        if (key == 'a') {
+          message1 += "8";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*8.5)) && (angle < radians (13.8461538462*9.5))) {
+      {
+        if (key == 'a') {
+          message1 += "9";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*9.5)) && (angle < radians (13.8461538462*10.5))) {
+      {
+        if (key == 'a') {
+          message1 += ".";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*10.5)) && (angle < radians (13.8461538462*11.5))) {
+      {
+        if (key == 'a') {
+          message1 += ",";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*11.5)) && (angle < radians (13.8461538462*12.5))) {
+      {
+        if (key == 'a') {
+          message1 += "?";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*12.5)) && (angle < radians (13.8461538462*13.5))) {
+      {
+        if (key == 'a') {
+          message1 += "()";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*13.5)) && (angle < radians (13.8461538462*14.5))) {
+      {
+        if (key == 'a') {
+          message1 += "(";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*14.5)) && (angle < radians (13.8461538462*15.5))) {
+      {
+        if (key == 'a') {
+          message1 += ")";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*15.5)) && (angle < radians (13.8461538462*16.5))) {
+      {
+        if (key == 'a') {
+          message1 += "%";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*16.5)) && (angle < radians (13.8461538462*17.5))) {
+      {
+        if (key == 'a') {
+          message1 += "$";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*17.5)) && (angle < radians (13.8461538462*18.5))) {
+      {
+        if (key == 'a') {
+          message1 += "#";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*18.5)) && (angle < radians (13.8461538462*19.5))) {
+      {
+        if (key == 'a') {
+          message1 += "@";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*19.5)) && (angle < radians (13.8461538462*20.5))) {
+      {
+        if (key == 'a') {
+          message1 += "^";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*20.5)) && (angle < radians (13.8461538462*21.5))) {
+      {
+        if (key == 'a') {
+          message1 += "+";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*21.5)) && (angle < radians (13.8461538462*22.5))) {
+      {
+        if (key == 'a') {
+          message1 += "-";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*22.5)) && (angle < radians (13.8461538462*23.5))) {
+      {
+        if (key == 'a') {
+          message1 += "^";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*23.5)) && (angle < radians (13.8461538462*24.5))) {
+      {
+        if (key == 'a') {
+          message1 += ":";
+        }
+      }
+    }
+    if ((angle >= radians(13.8461538462*24.5)) && (angle < radians (13.8461538462*25.5))) {
+      {
+        if (key == 'a') {
+          message1 += ";";
+        }
+      }
+    }
+  }
+}
+
+void keyPressed() {
+  if (key=='x') {
+    angle += radians(13.8461538462);
+  } else if (key=='y') {
+    angle -= radians(13.8461538462);
+  }
+
+  if (key=='v' && v == 10) {
+    v=20;
+  } else if (key=='v' && v == 20) {
+    v=10;
+  }
+}
