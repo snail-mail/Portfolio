@@ -1,0 +1,42 @@
+import processing.sound.*;
+SoundFile file;
+
+color[] palette = {#F4AB1D,#1D4F9A,#E71C25,#040E45,#D5DBBB,#F5F7F8,#F4AB1D,#062B8E};
+void setup() {
+  fullScreen();
+  background(palette[0]);
+  noLoop();
+  
+  file = new SoundFile(this, "jazz.mp3");
+  file.play();
+ 
+}
+void draw() {
+ 
+  drawSquare(0, 0, width, 6);
+}
+void drawSquare(float x, float y, float s, int l) {
+  fill(palette[(int)random(1, palette.length)]);
+  square(x, y, s);
+  if (l > 1) {
+    l--;
+    float r = random(1);
+    if (r > .5) {
+      drawSquare(x, y, s / 2, l);
+      drawSquare(x + s / 2, y, s / 2, l);
+      drawSquare(x, y + s / 2, s / 2, l);
+      drawSquare(x + s / 2, y + s / 2, s / 2, l);
+    } else {
+      drawSquare(x, y, s, l);
+
+    }
+  }
+}
+
+void mousePressed() {
+  loop();
+}
+
+void mouseReleased() {
+  noLoop(); 
+}
